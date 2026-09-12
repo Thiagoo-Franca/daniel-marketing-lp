@@ -21,7 +21,10 @@ const DADOS = [
 
 export default function QuemSomos() {
   return (
-    <section className="w-full py-8 px-2 md:px-0 md:py-12 bg-black">
+    <section
+      className="w-full py-8 px-2 md:px-0 md:py-12 bg-black"
+      id="quem-somos"
+    >
       <div className="flex flex-col gap-4 w-full max-w-7xl mx-auto justify-between px-2 text-gray-400">
         <Reveal>
           <h5 className="text-lg md:text-xl font-semibold text-left ">

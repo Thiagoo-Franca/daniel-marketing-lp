@@ -21,7 +21,7 @@ export default function Post() {
           />
         </svg>
       </div>
-      <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
+      <div className="absolute bottom-4 left-4 md:opacity-0 group-hover:opacity-100 transition-all duration-300">
         <h2 className="text-xl font-bold text-secondary">Nome do Projeto</h2>
         <p className="text-gray-400 text-sm text-white">
           Descrição do projeto.
