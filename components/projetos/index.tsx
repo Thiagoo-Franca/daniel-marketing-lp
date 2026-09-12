@@ -3,7 +3,10 @@ import Post from "./post";
 
 export default function Projetos() {
   return (
-    <section className="bg-black flex flex-col py-8 md:py-12 px-2 md:px-0 ">
+    <section
+      id="projetos"
+      className="bg-black flex flex-col py-8 md:py-12 px-2 md:px-0 "
+    >
       <div className="max-w-7xl mx-auto w-full">
         <Reveal>
           <h5 className="text-white text-sm font-light">Portifólio</h5>

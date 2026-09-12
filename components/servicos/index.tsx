@@ -85,7 +85,10 @@ const SERVICES = [
 ];
 export default function Servicos() {
   return (
-    <section className="bg-black flex flex-col py-8 md:py-12 px-2 md:px-0 ">
+    <section
+      id="servicos"
+      className="bg-black flex flex-col py-8 md:py-12 px-2 md:px-0 "
+    >
       <div className="flex flex-col gap-4  w-full max-w-7xl mx-auto justify-between px-2 md:px-0 text-gray-400">
         <Reveal>
           <h5>O que eu faço</h5>

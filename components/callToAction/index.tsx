@@ -4,6 +4,7 @@ import ButtonWhatsApp from "../ui/button-whatsapp";
 export default function CallToAction() {
   return (
     <section
+      id="call-to-action"
       className="relative w-full bg-cover bg-center bg-no-repeat py-16 md:py-32"
       style={{
         backgroundImage: "url('/assets/callToActionImage.jpg')",
