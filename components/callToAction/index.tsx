@@ -26,7 +26,7 @@ export default function CallToAction() {
             </p>
           </Reveal>
           <Reveal delay={0.45}>
-            <ButtonWhatsApp />
+            <ButtonWhatsApp className="px-12" />
           </Reveal>
         </div>
       </Reveal>

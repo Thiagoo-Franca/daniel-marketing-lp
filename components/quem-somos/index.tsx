@@ -1,5 +1,24 @@
 import { Reveal } from "../animations/Reveal";
 
+const DADOS = [
+  {
+    numeros: "4+",
+    descricao: "Anos de experiência",
+  },
+  {
+    numeros: "1M",
+    descricao: "Visualizações de conteúdo",
+  },
+  {
+    numeros: "50+",
+    descricao: "Clientes satisfeitos",
+  },
+  {
+    numeros: "100%",
+    descricao: "Comprometimento com resultados",
+  },
+];
+
 export default function QuemSomos() {
   return (
     <section className="w-full py-8 px-2 md:px-0 md:py-12 bg-black">
@@ -18,7 +37,7 @@ export default function QuemSomos() {
         <Reveal delay={0.3}>
           <p>
             Olá, meu nome é Daniel França, sou especialista em marketing digital
-            e produção de conteúdo audiovisual. Com mais de 5 anos de
+            e produção de conteúdo audiovisual. Com mais de 4 anos de
             experiência na área, ajudo empresas a se destacarem no mercado
             através de estratégias de marketing inovadoras e criativas. <br />
             <br /> Meu objetivo é transformar ideias em resultados reais,
@@ -26,6 +45,21 @@ export default function QuemSomos() {
             trabalhar juntos para levar sua marca ao próximo nível!
           </p>
         </Reveal>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8  w-full max-w-7xl mx-auto mt-8 md:mt-12 px-2 md:px-0">
+        {DADOS.map((item, index) => (
+          <Reveal key={index} delay={0.45 + index * 0.15}>
+            <div className="flex flex-col items-start pl-4 justify-center border-l-2 border-secondary">
+              <span className="text-3xl md:text-5xl font-bold text-white">
+                {item.numeros}
+              </span>
+              <span className="text-lg md:text-xl font-semibold text-gray-400">
+                {item.descricao}
+              </span>
+            </div>
+          </Reveal>
+        ))}
       </div>
     </section>
   );
