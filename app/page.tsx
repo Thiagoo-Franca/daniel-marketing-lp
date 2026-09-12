@@ -6,12 +6,12 @@ import Servicos from "@/components/servicos";
 
 export default function Home() {
   return (
-    <section className="">
+    <>
       <Hero />
       <Servicos />
       <QuemSomos />
       <Projetos />
       <CallToAction />
-    </section>
+    </>
   );
 }
