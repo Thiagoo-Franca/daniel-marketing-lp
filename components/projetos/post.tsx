@@ -12,7 +12,7 @@ interface PostProps {
 export default function Post({ onClick, projeto_data }: PostProps) {
   return (
     <div
-      className="group relative w-full bg-cover bg-center bg-no-repeat rounded-lg py-16 md:py-32 cursor-pointer hover:scale-102 transition-transform duration-300"
+      className="group relative w-full bg-cover bg-center bg-no-repeat rounded-lg py-24 md:py-32 cursor-pointer hover:scale-102 transition-transform duration-300"
       style={{
         backgroundImage: `url('${projeto_data?.images[0]}')`,
       }}
