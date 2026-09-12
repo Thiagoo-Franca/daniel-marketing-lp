@@ -4,6 +4,7 @@ import { Barlow, Barlow_Condensed, DM_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const dmSansHeading = DM_Sans({subsets:['latin'],variable:'--font-heading'});
 
@@ -38,7 +39,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
               <Header />
-{children}</body>
+              <main className="flex-grow">
+                {children}
+              </main>
+              <Footer />
+            </body>
     </html>
   );
 }
