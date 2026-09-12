@@ -9,11 +9,13 @@ export default function Projetos() {
     >
       <div className="max-w-7xl mx-auto w-full">
         <Reveal>
-          <h5 className="text-white text-sm font-light">Portifólio</h5>
+          <h5 className="text-lg md:text-xl font-semibold text-left  text-gray-400">
+            Portifólio
+          </h5>
         </Reveal>
         <Reveal delay={0.15}>
           <div className="flex flex-row items-center w-full gap-4 md:gap-8 justify-between">
-            <h1 className="text-white text-2xl md:text-6xl font-bold">
+            <h1 className="text-3xl md:text-6xl font-bold text-white text-left  max-w-sm">
               Projetos
             </h1>
             <p className="text-gray-400">

@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 ${IsScrolled ? "bg-black" : "bg-transparent"} transition-colors duration-300`}
+      className={`fixed top-0 left-0 right-0 z-50 ${IsScrolled || open ? "bg-black" : "bg-transparent"} transition-colors duration-300`}
     >
       <div className="flex items-center justify-between w-full max-w-7xl px-2 py-6 mx-auto">
         <a href="#" className="text-md md:text-2xl font-bold text-white">

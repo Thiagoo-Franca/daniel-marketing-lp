@@ -1,3 +1,4 @@
+import { useNav } from "@/hooks/useNav";
 import { motion } from "motion/react";
 
 interface MenuHamburguerProps {
@@ -6,34 +7,42 @@ interface MenuHamburguerProps {
 }
 
 const links = [
-  { href: "#quem-somos", label: "Quem Somos" },
-  { href: "#servicos", label: "Serviços" },
-  { href: "#projetos", label: "Projetos" },
-  { href: "#call-to-action", label: "Contato" },
+  { href: "servicos", label: "Serviços" },
+  { href: "quem-somos", label: "Quem Somos" },
+  { href: "projetos", label: "Projetos" },
+  { href: "call-to-action", label: "Contato" },
 ];
 
 export default function MenuHamburguer({ open, setOpen }: MenuHamburguerProps) {
+  const nav = useNav();
+
+  const handleNavigation = (sectionId: string) => {
+    nav(sectionId);
+    setOpen(false);
+  };
+
   return (
     <>
       {open && (
         <>
           <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} />
+
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="z-50 absolute top-full left-0 right-0 bg-black/90 backdrop-blur-md py-4 md:py-8 "
+            className="absolute top-full left-0 right-0 z-50 bg-black/90 py-4 backdrop-blur-md md:py-8"
           >
-            <ul className="flex flex-col gap-4 md:gap-8 items-center justify-center text-white text-lg md:text-xl font-semibold">
+            <ul className="flex flex-col items-center justify-center gap-4 text-lg font-semibold text-white md:gap-8 md:text-xl">
               {links.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="hover:text-secondary transition-colors duration-300"
+                  <button
+                    type="button"
+                    onClick={() => handleNavigation(link.href)}
+                    className="transition-colors duration-300 hover:text-secondary hover:cursor-pointer"
                   >
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
