@@ -15,7 +15,7 @@ export default function Header() {
                 </a>
                  <button
                  onClick={() => setOpen(!open)}
-            className="relative w-8 h-8 flex flex-col justify-center gap-1.5 group"
+            className="relative w-8 h-8 flex flex-col justify-center gap-1.5 group hover:cursor-pointer "
             aria-label="Menu"
           >
             <span className={`block h-px bg-white transition-all duration-300 origin-center ${open ? "rotate-45 translate-y-[7px]" : ""}`} />
