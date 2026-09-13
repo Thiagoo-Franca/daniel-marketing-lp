@@ -11,6 +11,9 @@
             },
             "call_to_action": {
               "type": "SharedSlice"
+            },
+            "quem_somos": {
+              "type": "SharedSlice"
             }
           }
         },

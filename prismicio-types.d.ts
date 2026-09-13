@@ -46,7 +46,7 @@ type ContentRelationshipFieldWithData<
 		>
 }[Exclude<TCustomType[number], string>["id"]];
 
-type HomeDocumentDataSlicesSlice = FooterSlice | CallToActionSlice
+type HomeDocumentDataSlicesSlice = FooterSlice | CallToActionSlice | QuemSomosSlice
 
 /**
  * Content for Home documents
@@ -213,6 +213,119 @@ type FooterSliceVariation = FooterSliceDefault
  */
 export type FooterSlice = prismic.SharedSlice<"footer", FooterSliceVariation>;
 
+/**
+ * Item in *QuemSomos → Default → Primary → estatisticas pessoais*
+ */
+export interface QuemSomosSliceDefaultPrimaryEstatisticasPessoaisItem {
+	/**
+	 * estatisticas pessoais field in *QuemSomos → Default → Primary → estatisticas pessoais*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Ex: 4+
+	 * - **API ID Path**: quem_somos.default.primary.estatisticas_pessoais[].estatisticas_pessoais
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	estatisticas_pessoais: prismic.KeyTextField;
+	
+	/**
+	 * estatisticas pessoais descricao field in *QuemSomos → Default → Primary → estatisticas pessoais*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Ex: De Experiência
+	 * - **API ID Path**: quem_somos.default.primary.estatisticas_pessoais[].estatisticas_pessoais_descricao
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	estatisticas_pessoais_descricao: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *QuemSomos → Default → Primary*
+ */
+export interface QuemSomosSliceDefaultPrimary {
+	/**
+	 * Foto que identifica você (preferencia 3/4) field in *QuemSomos → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: quem_somos.default.primary.foto_sua_3_4
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	foto_sua_3_4: prismic.ImageField<never>;
+	
+	/**
+	 * white-text field in *QuemSomos → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Texto em branco (Ex: Quem sou por trás das)
+	 * - **API ID Path**: quem_somos.default.primary.white_text
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	white_text: prismic.KeyTextField;
+	
+	/**
+	 * red-text field in *QuemSomos → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Texto em Vermelho (Ex: Câmeras)
+	 * - **API ID Path**: quem_somos.default.primary.red_text
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	red_text: prismic.KeyTextField;
+	
+	/**
+	 * descricao-1 field in *QuemSomos → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Fale aqui sobre você 1
+	 * - **API ID Path**: quem_somos.default.primary.descricao_1
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	descricao_1: prismic.KeyTextField;
+	
+	/**
+	 * descricao-2 field in *QuemSomos → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Fale aqui sobre você 2
+	 * - **API ID Path**: quem_somos.default.primary.descricao_2
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	descricao_2: prismic.KeyTextField;
+	
+	/**
+	 * estatisticas pessoais field in *QuemSomos → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: quem_somos.default.primary.estatisticas_pessoais[]
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	estatisticas_pessoais: prismic.GroupField<Simplify<QuemSomosSliceDefaultPrimaryEstatisticasPessoaisItem>>;
+}
+
+/**
+ * Default variation for QuemSomos Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type QuemSomosSliceDefault = prismic.SharedSliceVariation<"default", Simplify<QuemSomosSliceDefaultPrimary>, never>;
+
+/**
+ * Slice variation for *QuemSomos*
+ */
+type QuemSomosSliceVariation = QuemSomosSliceDefault
+
+/**
+ * QuemSomos Shared Slice
+ *
+ * - **API ID**: `quem_somos`
+ * - **Description**: QuemSomos
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type QuemSomosSlice = prismic.SharedSlice<"quem_somos", QuemSomosSliceVariation>;
+
 declare module "@prismicio/client" {
 	interface CreateClient {
 		(repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
@@ -239,7 +352,12 @@ declare module "@prismicio/client" {
 			FooterSlice,
 			FooterSliceDefaultPrimary,
 			FooterSliceVariation,
-			FooterSliceDefault
+			FooterSliceDefault,
+			QuemSomosSlice,
+			QuemSomosSliceDefaultPrimaryEstatisticasPessoaisItem,
+			QuemSomosSliceDefaultPrimary,
+			QuemSomosSliceVariation,
+			QuemSomosSliceDefault
 		}
 	}
 }

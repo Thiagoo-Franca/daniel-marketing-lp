@@ -2,8 +2,10 @@
 
 import CallToAction from "./CallToAction";
 import Footer from "./Footer";
+import QuemSomos from "./QuemSomos";
 
 export const components = {
-  call_to_action: CallToAction,
-  footer: Footer,
+	call_to_action: CallToAction,
+	footer: Footer,
+	quem_somos: QuemSomos
 };
