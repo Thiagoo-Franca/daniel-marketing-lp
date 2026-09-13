@@ -13,14 +13,22 @@ export default async function Home() {
     home.data.slices.map((slice) => ({
       type: slice.slice_type,
       variation: slice.variation,
+      data: slice.primary,
     })),
   );
   return (
     <>
       <Header />
+      <SliceZone
+        slices={home.data.slices.filter((slice) => slice.slice_type === "hero")}
+        components={components}
+      />
       <Servicos />
       <Projetos />
-      <SliceZone slices={home.data.slices} components={components} />
+      <SliceZone
+        slices={home.data.slices.filter((slice) => slice.slice_type !== "hero")}
+        components={components}
+      />
     </>
   );
 }

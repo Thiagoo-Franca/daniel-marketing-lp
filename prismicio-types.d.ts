@@ -297,29 +297,6 @@ type HeroSliceVariation = HeroSliceDefault
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
- * Default variation for HeroSection Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slices
- */
-export type HeroSectionSliceDefault = prismic.SharedSliceVariation<"default", Record<string, never>, never>;
-
-/**
- * Slice variation for *HeroSection*
- */
-type HeroSectionSliceVariation = HeroSectionSliceDefault
-
-/**
- * HeroSection Shared Slice
- *
- * - **API ID**: `hero_section`
- * - **Description**: HeroSection
- * - **Documentation**: https://prismic.io/docs/slices
- */
-export type HeroSectionSlice = prismic.SharedSlice<"hero_section", HeroSectionSliceVariation>;
-
-/**
  * Item in *QuemSomos → Default → Primary → estatisticas pessoais*
  */
 export interface QuemSomosSliceDefaultPrimaryEstatisticasPessoaisItem {
@@ -464,9 +441,6 @@ declare module "@prismicio/client" {
 			HeroSliceDefaultPrimary,
 			HeroSliceVariation,
 			HeroSliceDefault,
-			HeroSectionSlice,
-			HeroSectionSliceVariation,
-			HeroSectionSliceDefault,
 			QuemSomosSlice,
 			QuemSomosSliceDefaultPrimaryEstatisticasPessoaisItem,
 			QuemSomosSliceDefaultPrimary,

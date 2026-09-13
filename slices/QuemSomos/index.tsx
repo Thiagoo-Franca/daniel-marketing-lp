@@ -31,6 +31,12 @@ const QuemSomos: FC<QuemSomosProps> = ({ slice }) => {
         id="quem-somos"
       >
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 w-full max-w-7xl mx-auto justify-between px-2 text-gray-400">
+          <Reveal>
+            <h5 className="text-lg md:text-xl font-semibold text-left md:hidden ">
+              Quem sou eu
+            </h5>
+          </Reveal>
+
           <Reveal className="w-full lg:w-3/4 max-w-md">
             <div className="relative aspect-[3/4] hover:scale-102 transition-transform duration-300 rounded-lg overflow-hidden">
               {isFilled.image(slice.primary.foto_sua_3_4) && (
@@ -45,7 +51,7 @@ const QuemSomos: FC<QuemSomosProps> = ({ slice }) => {
           </Reveal>
           <div className="flex flex-col gap-4 md:gap-8 w-full">
             <Reveal>
-              <h5 className="text-lg md:text-xl font-semibold text-left ">
+              <h5 className="text-lg md:text-xl font-semibold text-left md:block hidden">
                 Quem sou eu
               </h5>
             </Reveal>
