@@ -75,7 +75,69 @@ interface HomeDocumentData {
  */
 export type HomeDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-interface ProjetoDocumentData {}
+/**
+ * Item in *projeto → foto*
+ */
+export interface ProjetoDocumentDataFotoItem {
+	/**
+	 * foto field in *projeto → foto*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projeto.foto[].foto
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	foto: prismic.ImageField<never>;
+}
+
+/**
+ * Content for projeto documents
+ */
+interface ProjetoDocumentData {
+	/**
+	 * titulo field in *projeto*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projeto.titulo
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	titulo: prismic.KeyTextField;
+	
+	/**
+	 * descricao field in *projeto*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projeto.descricao
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	descricao: prismic.KeyTextField;
+	
+	/**
+	 * capa field in *projeto*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projeto.capa
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	capa: prismic.ImageField<never>;
+	
+	/**
+	 * foto field in *projeto*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projeto.foto[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	foto: prismic.GroupField<Simplify<ProjetoDocumentDataFotoItem>>;
+}
 
 /**
  * projeto document from Prismic
@@ -525,6 +587,7 @@ declare module "@prismicio/client" {
 			HomeDocumentDataSlicesSlice,
 			ProjetoDocument,
 			ProjetoDocumentData,
+			ProjetoDocumentDataFotoItem,
 			AllDocumentTypes,
 			CallToActionSlice,
 			CallToActionSliceDefaultPrimary,

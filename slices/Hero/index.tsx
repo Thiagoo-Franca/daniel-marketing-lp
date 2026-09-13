@@ -45,7 +45,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         {SLIDES.map((slide, index) => (
           <Image
             key={index}
-            src={slide.src}
+            src={slide.src ?? ""}
             alt={slide.alt}
             fill
             className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${

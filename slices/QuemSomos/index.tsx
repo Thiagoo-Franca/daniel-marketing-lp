@@ -35,8 +35,8 @@ const QuemSomos: FC<QuemSomosProps> = ({ slice }) => {
             </h5>
           </Reveal>
 
-          <Reveal className="w-full lg:w-3/4 max-w-md">
-            <div className="relative aspect-[3/4] hover:scale-102 transition-transform duration-300 rounded-lg overflow-hidden">
+          <Reveal className="w-full lg:w-3/4 md:max-w-md">
+            <div className="relative aspect-[3/4]  hover:scale-102 transition-transform duration-300 rounded-lg overflow-hidden">
               {isFilled.image(slice.primary.foto_sua_3_4) && (
                 <Image
                   src={slice.primary.foto_sua_3_4.url}

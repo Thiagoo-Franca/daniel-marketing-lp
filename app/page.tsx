@@ -9,13 +9,7 @@ export default async function Home() {
   const client = createClient();
   const home = await client.getSingle("home");
 
-  console.log(
-    home.data.slices.map((slice) => ({
-      type: slice.slice_type,
-      variation: slice.variation,
-      data: slice.primary,
-    })),
-  );
+  const projetos = await client.getAllByType("projeto");
 
   return (
     <>
@@ -25,7 +19,7 @@ export default async function Home() {
         components={components}
       />
       <Servicos />
-      <Projetos />
+      <Projetos projetos={projetos} />
       <SliceZone
         slices={home.data.slices.filter((slice) => slice.slice_type !== "hero")}
         components={components}
