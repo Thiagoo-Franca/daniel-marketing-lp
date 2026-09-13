@@ -25,6 +25,7 @@ export default async function Home() {
         components={components}
       />
       <Servicos />
+      <Projetos />
       <SliceZone
         slices={home.data.slices.filter((slice) => slice.slice_type !== "hero")}
         components={components}

@@ -46,7 +46,7 @@ type ContentRelationshipFieldWithData<
 		>
 }[Exclude<TCustomType[number], string>["id"]];
 
-type HomeDocumentDataSlicesSlice = FooterSlice | CallToActionSlice | QuemSomosSlice | HeroSlice | ProjetosSlice
+type HomeDocumentDataSlicesSlice = FooterSlice | CallToActionSlice | QuemSomosSlice | HeroSlice
 
 /**
  * Content for Home documents
@@ -75,67 +75,7 @@ interface HomeDocumentData {
  */
 export type HomeDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-type ProjetoDocumentDataSlicesSlice = ProjetosSlice
-
-/**
- * Content for Projeto documents
- */
-interface ProjetoDocumentData {
-	/**
-	 * Slice Zone field in *Projeto*
-	 *
-	 * - **Field Type**: Slice Zone
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: projeto.slices[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/slices
-	 */
-	slices: prismic.SliceZone<ProjetoDocumentDataSlicesSlice>;/**
-	 * Meta Title field in *Projeto*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: A title of the page used for social media and search engines
-	 * - **API ID Path**: projeto.meta_title
-	 * - **Tab**: SEO & Metadata
-	 * - **Documentation**: https://prismic.io/docs/fields/text
-	 */
-	meta_title: prismic.KeyTextField;
-	
-	/**
-	 * Meta Description field in *Projeto*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: A brief summary of the page
-	 * - **API ID Path**: projeto.meta_description
-	 * - **Tab**: SEO & Metadata
-	 * - **Documentation**: https://prismic.io/docs/fields/text
-	 */
-	meta_description: prismic.KeyTextField;
-	
-	/**
-	 * Meta Image field in *Projeto*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: projeto.meta_image
-	 * - **Tab**: SEO & Metadata
-	 * - **Documentation**: https://prismic.io/docs/fields/image
-	 */
-	meta_image: prismic.ImageField<never>;
-}
-
-/**
- * Projeto document from Prismic
- *
- * - **API ID**: `projeto`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/content-modeling
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type ProjetoDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<Simplify<ProjetoDocumentData>, "projeto", Lang>;
-
-export type AllDocumentTypes = HomeDocument | ProjetoDocument;
+export type AllDocumentTypes = HomeDocument;
 
 /**
  * Primary content in *CallToAction → Default → Primary*
@@ -560,9 +500,6 @@ declare module "@prismicio/client" {
 			HomeDocument,
 			HomeDocumentData,
 			HomeDocumentDataSlicesSlice,
-			ProjetoDocument,
-			ProjetoDocumentData,
-			ProjetoDocumentDataSlicesSlice,
 			AllDocumentTypes,
 			CallToActionSlice,
 			CallToActionSliceDefaultPrimary,

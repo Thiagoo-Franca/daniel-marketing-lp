@@ -17,9 +17,6 @@
             },
             "hero": {
               "type": "SharedSlice"
-            },
-            "projetos": {
-              "type": "SharedSlice"
             }
           }
         },
