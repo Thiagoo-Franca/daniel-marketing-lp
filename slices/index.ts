@@ -2,10 +2,14 @@
 
 import CallToAction from "./CallToAction";
 import Footer from "./Footer";
+import Hero from "./Hero";
+import HeroSection from "./HeroSection";
 import QuemSomos from "./QuemSomos";
 
 export const components = {
 	call_to_action: CallToAction,
 	footer: Footer,
+	hero: Hero,
+	hero_section: HeroSection,
 	quem_somos: QuemSomos
 };

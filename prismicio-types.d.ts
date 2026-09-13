@@ -46,7 +46,7 @@ type ContentRelationshipFieldWithData<
 		>
 }[Exclude<TCustomType[number], string>["id"]];
 
-type HomeDocumentDataSlicesSlice = FooterSlice | CallToActionSlice | QuemSomosSlice
+type HomeDocumentDataSlicesSlice = FooterSlice | CallToActionSlice | QuemSomosSlice | HeroSlice
 
 /**
  * Content for Home documents
@@ -214,6 +214,112 @@ type FooterSliceVariation = FooterSliceDefault
 export type FooterSlice = prismic.SharedSlice<"footer", FooterSliceVariation>;
 
 /**
+ * Item in *Hero → Default → Primary → background-image*
+ */
+export interface HeroSliceDefaultPrimaryBackgroundImageItem {
+	/**
+	 * background-image field in *Hero → Default → Primary → background-image*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.background_image[].background_image
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	background_image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Hero → Default → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+	/**
+	 * listagem field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Digite aqui suas habilidades (Ex: Foto - Vídeos...)
+	 * - **API ID Path**: hero.default.primary.listagem
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	listagem: prismic.KeyTextField;
+	
+	/**
+	 * white-text field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Digite aqui a parte do texto em branco
+	 * - **API ID Path**: hero.default.primary.white_text
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	white_text: prismic.KeyTextField;
+	
+	/**
+	 * red-text field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Digite aqui a parte do texto em destaque em vermelho
+	 * - **API ID Path**: hero.default.primary.red_text
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	red_text: prismic.KeyTextField;
+	
+	/**
+	 * background-image field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.background_image[]
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	background_image: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryBackgroundImageItem>>;
+}
+
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<"default", Simplify<HeroSliceDefaultPrimary>, never>;
+
+/**
+ * Slice variation for *Hero*
+ */
+type HeroSliceVariation = HeroSliceDefault
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
+ * Default variation for HeroSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroSectionSliceDefault = prismic.SharedSliceVariation<"default", Record<string, never>, never>;
+
+/**
+ * Slice variation for *HeroSection*
+ */
+type HeroSectionSliceVariation = HeroSectionSliceDefault
+
+/**
+ * HeroSection Shared Slice
+ *
+ * - **API ID**: `hero_section`
+ * - **Description**: HeroSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroSectionSlice = prismic.SharedSlice<"hero_section", HeroSectionSliceVariation>;
+
+/**
  * Item in *QuemSomos → Default → Primary → estatisticas pessoais*
  */
 export interface QuemSomosSliceDefaultPrimaryEstatisticasPessoaisItem {
@@ -353,6 +459,14 @@ declare module "@prismicio/client" {
 			FooterSliceDefaultPrimary,
 			FooterSliceVariation,
 			FooterSliceDefault,
+			HeroSlice,
+			HeroSliceDefaultPrimaryBackgroundImageItem,
+			HeroSliceDefaultPrimary,
+			HeroSliceVariation,
+			HeroSliceDefault,
+			HeroSectionSlice,
+			HeroSectionSliceVariation,
+			HeroSectionSliceDefault,
 			QuemSomosSlice,
 			QuemSomosSliceDefaultPrimaryEstatisticasPessoaisItem,
 			QuemSomosSliceDefaultPrimary,

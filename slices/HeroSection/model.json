@@ -1,0 +1,16 @@
+{
+  "description": "HeroSection",
+  "id": "hero_section",
+  "name": "HeroSection",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "",
+      "name": "Default",
+      "version": "initial"
+    }
+  ]
+}

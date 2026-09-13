@@ -1,5 +1,4 @@
 import Header from "@/components/header";
-import Hero from "@/components/hero";
 import Projetos from "@/components/projetos";
 import Servicos from "@/components/servicos";
 import { createClient } from "@/prismicio";
@@ -19,7 +18,6 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <Hero />
       <Servicos />
       <Projetos />
       <SliceZone slices={home.data.slices} components={components} />
