@@ -1,17 +1,29 @@
-import CallToAction from "@/components/callToAction";
-import Hero from "@/components/hero";
+import Header from "@/components/header";
 import Projetos from "@/components/projetos";
-import QuemSomos from "@/components/quem-somos";
 import Servicos from "@/components/servicos";
+import { createClient } from "@/prismicio";
+import { components } from "@/slices";
+import { SliceZone } from "@prismicio/react";
 
-export default function Home() {
+export default async function Home() {
+  const client = createClient();
+  const home = await client.getSingle("home");
+
+  const projetos = await client.getAllByType("projeto");
+
   return (
     <>
-      <Hero />
+      <Header />
+      <SliceZone
+        slices={home.data.slices.filter((slice) => slice.slice_type === "hero")}
+        components={components}
+      />
       <Servicos />
-      <QuemSomos />
-      <Projetos />
-      <CallToAction />
+      <Projetos projetos={projetos} />
+      <SliceZone
+        slices={home.data.slices.filter((slice) => slice.slice_type !== "hero")}
+        components={components}
+      />
     </>
   );
 }

@@ -1,0 +1,47 @@
+{
+  "description": "CallToAction",
+  "id": "call_to_action",
+  "name": "CallToAction",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "https://images.prismic.io/daniel-marketing-lp/shared-slices/call_to_action/default/95b090ac3a3e6351c087bf33307ba83144a3077d.png?auto=compress%2Cformat",
+      "name": "Default",
+      "primary": {
+        "background_image": {
+          "config": {
+            "constraint": {},
+            "label": "background-image",
+            "thumbnails": []
+          },
+          "type": "Image"
+        },
+        "frase_chamada": {
+          "config": {
+            "label": "frase chamada",
+            "placeholder": "Frase para chamar lead (Apenas texto em branco)"
+          },
+          "type": "Text"
+        },
+        "red_text": {
+          "config": {
+            "label": "red-text",
+            "placeholder": "Digite aqui palavra/frase em destaque em vermelho"
+          },
+          "type": "Text"
+        },
+        "paragraph": {
+          "config": {
+            "label": "paragraph",
+            "placeholder": "Digite aqui texto mais descritivo de chamada"
+          },
+          "type": "Text"
+        }
+      },
+      "version": "initial"
+    }
+  ]
+}

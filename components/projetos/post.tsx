@@ -1,20 +1,19 @@
+import { Content } from "@prismicio/client";
 import { ArrowIcon } from "../ui/icons";
 
 interface PostProps {
   onClick?: () => void;
-  projeto_data?: {
-    title: string;
-    description: string;
-    images: string[];
-  };
+  projeto_data?: Content.ProjetoDocument; // ajustar depois
 }
 
 export default function Post({ onClick, projeto_data }: PostProps) {
+  console.log("projeto_data", projeto_data);
+
   return (
     <div
       className="group relative w-full bg-cover bg-center bg-no-repeat rounded-lg py-24 md:py-32 cursor-pointer hover:scale-102 transition-transform duration-300"
       style={{
-        backgroundImage: `url('${projeto_data?.images[0]}')`,
+        backgroundImage: `url('${projeto_data?.data.capa.url}')`,
       }}
       onClick={onClick}
     >
@@ -23,10 +22,14 @@ export default function Post({ onClick, projeto_data }: PostProps) {
       </div>
       <div className="absolute bottom-4 left-4 md:opacity-0 group-hover:opacity-100 transition-all duration-300">
         <h2 className="text-xl font-bold text-secondary">
-          {projeto_data?.title}
+          {
+            // projeto_data?.slices.data.primary.titulo
+          }
         </h2>
         <p className="text-gray-400 text-sm text-white">
-          {projeto_data?.description}
+          {
+            // projeto_data?.primary.descricao
+          }
         </p>
       </div>
     </div>

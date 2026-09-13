@@ -8,22 +8,17 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import Image from "next/image";
+import { Content, isFilled } from "@prismicio/client";
 
 interface ModalProjetosProps {
   onClose?: () => void;
-  projeto_data: {
-    title: string;
-    description: string;
-    images: string[];
-  };
+  projeto_data: Content.ProjetoDocument;
 }
 
 export default function ModalProjetos({
   onClose,
   projeto_data,
 }: ModalProjetosProps) {
-  const projeto = projeto_data;
-
   return (
     <section className="fixed inset-0 z-50 flex items-center justify-center">
       {
@@ -49,16 +44,22 @@ export default function ModalProjetos({
             } as React.CSSProperties
           }
         >
-          {projeto.images?.map((image, index) => (
-            <SwiperSlide key={image}>
-              <Image
-                src={image}
-                alt={`Imagem ${index + 1} do ${projeto.title}`}
-                fill
-                className="object-cover"
-              />
-            </SwiperSlide>
-          ))}
+          {projeto_data.data.foto?.map(
+            (foto, index) =>
+              isFilled.image(foto.foto) && (
+                <SwiperSlide key={index}>
+                  <Image
+                    src={foto.foto.url}
+                    alt={
+                      foto.foto.alt ??
+                      `Imagem ${index + 1} de ${projeto_data.data.titulo}`
+                    }
+                    fill
+                    className="object-cover"
+                  />
+                </SwiperSlide>
+              ),
+          )}
         </Swiper>
 
         <button
@@ -73,11 +74,11 @@ export default function ModalProjetos({
         </button>
         <div className="px-4 py-6">
           <h2 className="mb-4 text-2xl font-bold text-white md:text-4xl">
-            {projeto.title}
+            {projeto_data.data.titulo}
           </h2>
 
           <p className="text-gray-300 text-sm md:text-base">
-            {projeto.description}
+            {projeto_data.data.descricao}
           </p>
         </div>
       </div>

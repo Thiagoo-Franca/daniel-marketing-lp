@@ -1,0 +1,56 @@
+{
+  "format": "custom",
+  "id": "projeto",
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "titulo": {
+        "config": {
+          "label": "titulo",
+          "placeholder": ""
+        },
+        "type": "Text"
+      },
+      "descricao": {
+        "config": {
+          "label": "descricao",
+          "placeholder": ""
+        },
+        "type": "Text"
+      },
+      "capa": {
+        "config": {
+          "constraint": {},
+          "label": "capa",
+          "thumbnails": []
+        },
+        "type": "Image"
+      },
+      "foto": {
+        "config": {
+          "fields": {
+            "foto": {
+              "config": {
+                "constraint": {},
+                "label": "foto",
+                "thumbnails": []
+              },
+              "type": "Image"
+            }
+          },
+          "label": "foto",
+          "repeat": true
+        },
+        "type": "Group"
+      }
+    }
+  },
+  "label": "projeto",
+  "repeatable": true,
+  "status": true
+}

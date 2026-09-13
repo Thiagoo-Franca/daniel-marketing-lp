@@ -1,0 +1,56 @@
+{
+  "description": "Hero",
+  "id": "hero",
+  "name": "Hero",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "https://images.prismic.io/daniel-marketing-lp/shared-slices/hero/default/65b879acb1eca3ddfa6bffb86d46507d5352fd1d.png?auto=compress%2Cformat",
+      "name": "Default",
+      "primary": {
+        "listagem": {
+          "config": {
+            "label": "listagem",
+            "placeholder": "Digite aqui suas habilidades (Ex: Foto - Vídeos...)"
+          },
+          "type": "Text"
+        },
+        "white_text": {
+          "config": {
+            "label": "white-text",
+            "placeholder": "Digite aqui a parte do texto em branco"
+          },
+          "type": "Text"
+        },
+        "red_text": {
+          "config": {
+            "label": "red-text",
+            "placeholder": "Digite aqui a parte do texto em destaque em vermelho"
+          },
+          "type": "Text"
+        },
+        "background_image": {
+          "config": {
+            "fields": {
+              "background_image": {
+                "config": {
+                  "constraint": {},
+                  "label": "background-image",
+                  "thumbnails": []
+                },
+                "type": "Image"
+              }
+            },
+            "label": "background-image",
+            "repeat": true
+          },
+          "type": "Group"
+        }
+      },
+      "version": "initial"
+    }
+  ]
+}

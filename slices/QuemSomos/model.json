@@ -1,0 +1,77 @@
+{
+  "description": "QuemSomos",
+  "id": "quem_somos",
+  "name": "QuemSomos",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "https://images.prismic.io/daniel-marketing-lp/shared-slices/quem_somos/default/b862558b4ac88ad8f0cb152206b76d5b27b22c75.png?auto=compress%2Cformat",
+      "name": "Default",
+      "primary": {
+        "foto_sua_3_4": {
+          "config": {
+            "constraint": {},
+            "label": "Foto que identifica você (preferencia 3/4)",
+            "thumbnails": []
+          },
+          "type": "Image"
+        },
+        "white_text": {
+          "config": {
+            "label": "white-text",
+            "placeholder": "Texto em branco (Ex: Quem sou por trás das)"
+          },
+          "type": "Text"
+        },
+        "red_text": {
+          "config": {
+            "label": "red-text",
+            "placeholder": "Texto em Vermelho (Ex: Câmeras)"
+          },
+          "type": "Text"
+        },
+        "descricao_1": {
+          "config": {
+            "label": "descricao-1",
+            "placeholder": "Fale aqui sobre você 1"
+          },
+          "type": "Text"
+        },
+        "descricao_2": {
+          "config": {
+            "label": "descricao-2",
+            "placeholder": "Fale aqui sobre você 2"
+          },
+          "type": "Text"
+        },
+        "estatisticas_pessoais": {
+          "config": {
+            "fields": {
+              "estatisticas_pessoais": {
+                "config": {
+                  "label": "estatisticas pessoais",
+                  "placeholder": "Ex: 4+"
+                },
+                "type": "Text"
+              },
+              "estatisticas_pessoais_descricao": {
+                "config": {
+                  "label": "estatisticas pessoais descricao",
+                  "placeholder": "Ex: De Experiência"
+                },
+                "type": "Text"
+              }
+            },
+            "label": "estatisticas pessoais",
+            "repeat": true
+          },
+          "type": "Group"
+        }
+      },
+      "version": "initial"
+    }
+  ]
+}

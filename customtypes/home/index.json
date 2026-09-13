@@ -1,0 +1,30 @@
+{
+  "format": "custom",
+  "id": "home",
+  "json": {
+    "Main": {
+      "slices": {
+        "config": {
+          "choices": {
+            "footer": {
+              "type": "SharedSlice"
+            },
+            "call_to_action": {
+              "type": "SharedSlice"
+            },
+            "quem_somos": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            }
+          }
+        },
+        "type": "Slices"
+      }
+    }
+  },
+  "label": "Home",
+  "repeatable": false,
+  "status": true
+}

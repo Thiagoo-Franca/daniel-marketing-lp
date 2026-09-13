@@ -1,0 +1,57 @@
+{
+  "description": "Projeto",
+  "id": "projeto",
+  "name": "Projeto",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "https://images.prismic.io/daniel-marketing-lp/shared-slices/projeto/default/9411137460424c9ad5ed111d7da0bce155cbc248.png?auto=compress%2Cformat",
+      "name": "Default",
+      "primary": {
+        "card_capa": {
+          "config": {
+            "constraint": {},
+            "label": "card-capa",
+            "thumbnails": []
+          },
+          "type": "Image"
+        },
+        "titulo": {
+          "config": {
+            "label": "titulo",
+            "placeholder": "Digite aqui o titulo do projeto"
+          },
+          "type": "Text"
+        },
+        "descricao": {
+          "config": {
+            "label": "descricao",
+            "placeholder": "Digite aqui a descrição do projeto"
+          },
+          "type": "Text"
+        },
+        "fotos": {
+          "config": {
+            "fields": {
+              "foto": {
+                "config": {
+                  "constraint": {},
+                  "label": "foto",
+                  "thumbnails": []
+                },
+                "type": "Image"
+              }
+            },
+            "label": "fotos",
+            "repeat": true
+          },
+          "type": "Group"
+        }
+      },
+      "version": "initial"
+    }
+  ]
+}
