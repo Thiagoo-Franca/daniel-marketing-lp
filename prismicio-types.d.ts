@@ -75,7 +75,20 @@ interface HomeDocumentData {
  */
 export type HomeDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-export type AllDocumentTypes = HomeDocument;
+interface ProjetoDocumentData {}
+
+/**
+ * projeto document from Prismic
+ *
+ * - **API ID**: `projeto`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjetoDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<Simplify<ProjetoDocumentData>, "projeto", Lang>;
+
+export type AllDocumentTypes = HomeDocument | ProjetoDocument;
 
 /**
  * Primary content in *CallToAction → Default → Primary*
@@ -297,6 +310,89 @@ type HeroSliceVariation = HeroSliceDefault
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *Projeto → Default → Primary → fotos*
+ */
+export interface ProjetoSliceDefaultPrimaryFotosItem {
+	/**
+	 * foto field in *Projeto → Default → Primary → fotos*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projeto.default.primary.fotos[].foto
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	foto: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Projeto → Default → Primary*
+ */
+export interface ProjetoSliceDefaultPrimary {
+	/**
+	 * card-capa field in *Projeto → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projeto.default.primary.card_capa
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	card_capa: prismic.ImageField<never>;
+	
+	/**
+	 * titulo field in *Projeto → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Digite aqui o titulo do projeto
+	 * - **API ID Path**: projeto.default.primary.titulo
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	titulo: prismic.KeyTextField;
+	
+	/**
+	 * descricao field in *Projeto → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Digite aqui a descrição do projeto
+	 * - **API ID Path**: projeto.default.primary.descricao
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	descricao: prismic.KeyTextField;
+	
+	/**
+	 * fotos field in *Projeto → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projeto.default.primary.fotos[]
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	fotos: prismic.GroupField<Simplify<ProjetoSliceDefaultPrimaryFotosItem>>;
+}
+
+/**
+ * Default variation for Projeto Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ProjetoSliceDefault = prismic.SharedSliceVariation<"default", Simplify<ProjetoSliceDefaultPrimary>, never>;
+
+/**
+ * Slice variation for *Projeto*
+ */
+type ProjetoSliceVariation = ProjetoSliceDefault
+
+/**
+ * Projeto Shared Slice
+ *
+ * - **API ID**: `projeto`
+ * - **Description**: Projeto
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ProjetoSlice = prismic.SharedSlice<"projeto", ProjetoSliceVariation>;
+
+/**
  * Item in *QuemSomos → Default → Primary → estatisticas pessoais*
  */
 export interface QuemSomosSliceDefaultPrimaryEstatisticasPessoaisItem {
@@ -427,6 +523,8 @@ declare module "@prismicio/client" {
 			HomeDocument,
 			HomeDocumentData,
 			HomeDocumentDataSlicesSlice,
+			ProjetoDocument,
+			ProjetoDocumentData,
 			AllDocumentTypes,
 			CallToActionSlice,
 			CallToActionSliceDefaultPrimary,
@@ -441,6 +539,11 @@ declare module "@prismicio/client" {
 			HeroSliceDefaultPrimary,
 			HeroSliceVariation,
 			HeroSliceDefault,
+			ProjetoSlice,
+			ProjetoSliceDefaultPrimaryFotosItem,
+			ProjetoSliceDefaultPrimary,
+			ProjetoSliceVariation,
+			ProjetoSliceDefault,
 			QuemSomosSlice,
 			QuemSomosSliceDefaultPrimaryEstatisticasPessoaisItem,
 			QuemSomosSliceDefaultPrimary,
