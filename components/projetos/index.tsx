@@ -29,7 +29,7 @@ export default function Projetos() {
       <div className="max-w-7xl mx-auto w-full">
         <Reveal>
           <h5 className="text-lg md:text-xl font-semibold text-left  text-gray-400">
-            Portifólio
+            Portfólio
           </h5>
         </Reveal>
         <Reveal delay={0.15}>

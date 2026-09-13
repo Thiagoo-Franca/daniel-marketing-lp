@@ -1,0 +1,50 @@
+{
+  "description": "Footer",
+  "id": "footer",
+  "name": "Footer",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "https://images.prismic.io/daniel-marketing-lp/shared-slices/footer/default/22f606820e8fcab8e2872cea5348bac6ef7ae1f8.png?auto=compress%2Cformat",
+      "name": "Default",
+      "primary": {
+        "frase": {
+          "config": {
+            "label": "frase",
+            "placeholder": "Digite sua frase de destaque que fica no Footer"
+          },
+          "type": "Text"
+        },
+        "instagram": {
+          "config": {
+            "allowTargetBlank": true,
+            "allowText": true,
+            "label": "instagram",
+            "placeholder": "Digite aqui link para seu Instagram incluindo https://...",
+            "repeat": false,
+            "select": null
+          },
+          "type": "Link"
+        },
+        "whatsapp": {
+          "config": {
+            "label": "whatsapp",
+            "placeholder": "Digite seu número de whatsApp"
+          },
+          "type": "Text"
+        },
+        "email": {
+          "config": {
+            "label": "email",
+            "placeholder": "Digite seu endereço de e-mail"
+          },
+          "type": "Text"
+        }
+      },
+      "version": "initial"
+    }
+  ]
+}

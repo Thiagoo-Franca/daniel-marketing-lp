@@ -1,0 +1,21 @@
+{
+  "format": "custom",
+  "id": "home",
+  "json": {
+    "Main": {
+      "slices": {
+        "config": {
+          "choices": {
+            "footer": {
+              "type": "SharedSlice"
+            }
+          }
+        },
+        "type": "Slices"
+      }
+    }
+  },
+  "label": "Home",
+  "repeatable": false,
+  "status": true
+}
