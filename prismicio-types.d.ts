@@ -297,79 +297,6 @@ type HeroSliceVariation = HeroSliceDefault
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
- * Item in *Projetos → Default → Primary → fotos*
- */
-export interface ProjetosSliceDefaultPrimaryFotosItem {
-	/**
-	 * Fotos field in *Projetos → Default → Primary → fotos*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: projetos.default.primary.fotos[].fotos
-	 * - **Documentation**: https://prismic.io/docs/fields/image
-	 */
-	fotos: prismic.ImageField<never>;
-}
-
-/**
- * Primary content in *Projetos → Default → Primary*
- */
-export interface ProjetosSliceDefaultPrimary {
-	/**
-	 * fotos field in *Projetos → Default → Primary*
-	 *
-	 * - **Field Type**: Group
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: projetos.default.primary.fotos[]
-	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-	 */
-	fotos: prismic.GroupField<Simplify<ProjetosSliceDefaultPrimaryFotosItem>>;
-	
-	/**
-	 * titulo_projeto field in *Projetos → Default → Primary*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: Digite aqui o titulo do projeto (Ex: Fotos - Ensaio casamento)
-	 * - **API ID Path**: projetos.default.primary.titulo_projeto
-	 * - **Documentation**: https://prismic.io/docs/fields/text
-	 */
-	titulo_projeto: prismic.KeyTextField;
-	
-	/**
-	 * Descricao do projeto field in *Projetos → Default → Primary*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: Digite aqui a descrição do projeto
-	 * - **API ID Path**: projetos.default.primary.descricao_do_projeto
-	 * - **Documentation**: https://prismic.io/docs/fields/text
-	 */
-	descricao_do_projeto: prismic.KeyTextField;
-}
-
-/**
- * Default variation for Projetos Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slices
- */
-export type ProjetosSliceDefault = prismic.SharedSliceVariation<"default", Simplify<ProjetosSliceDefaultPrimary>, never>;
-
-/**
- * Slice variation for *Projetos*
- */
-type ProjetosSliceVariation = ProjetosSliceDefault
-
-/**
- * Projetos Shared Slice
- *
- * - **API ID**: `projetos`
- * - **Description**: Projetos
- * - **Documentation**: https://prismic.io/docs/slices
- */
-export type ProjetosSlice = prismic.SharedSlice<"projetos", ProjetosSliceVariation>;
-
-/**
  * Item in *QuemSomos → Default → Primary → estatisticas pessoais*
  */
 export interface QuemSomosSliceDefaultPrimaryEstatisticasPessoaisItem {
@@ -514,11 +441,6 @@ declare module "@prismicio/client" {
 			HeroSliceDefaultPrimary,
 			HeroSliceVariation,
 			HeroSliceDefault,
-			ProjetosSlice,
-			ProjetosSliceDefaultPrimaryFotosItem,
-			ProjetosSliceDefaultPrimary,
-			ProjetosSliceVariation,
-			ProjetosSliceDefault,
 			QuemSomosSlice,
 			QuemSomosSliceDefaultPrimaryEstatisticasPessoaisItem,
 			QuemSomosSliceDefaultPrimary,
