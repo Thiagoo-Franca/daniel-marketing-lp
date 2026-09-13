@@ -1,4 +1,13 @@
 {
   "repositoryName": "daniel-marketing-lp",
-  "routes": []
+  "routes": [
+    {
+      "type": "home",
+      "path": "/"
+    },
+    {
+      "type": "projeto",
+      "path": "/projeto/:uid"
+    }
+  ]
 }

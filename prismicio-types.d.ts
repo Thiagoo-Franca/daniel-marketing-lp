@@ -46,7 +46,7 @@ type ContentRelationshipFieldWithData<
 		>
 }[Exclude<TCustomType[number], string>["id"]];
 
-type HomeDocumentDataSlicesSlice = FooterSlice | CallToActionSlice | QuemSomosSlice | HeroSlice
+type HomeDocumentDataSlicesSlice = FooterSlice | CallToActionSlice | QuemSomosSlice | HeroSlice | ProjetosSlice
 
 /**
  * Content for Home documents
@@ -75,7 +75,67 @@ interface HomeDocumentData {
  */
 export type HomeDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-export type AllDocumentTypes = HomeDocument;
+type ProjetoDocumentDataSlicesSlice = ProjetosSlice
+
+/**
+ * Content for Projeto documents
+ */
+interface ProjetoDocumentData {
+	/**
+	 * Slice Zone field in *Projeto*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projeto.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/slices
+	 */
+	slices: prismic.SliceZone<ProjetoDocumentDataSlicesSlice>;/**
+	 * Meta Title field in *Projeto*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: projeto.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	meta_title: prismic.KeyTextField;
+	
+	/**
+	 * Meta Description field in *Projeto*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: projeto.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	meta_description: prismic.KeyTextField;
+	
+	/**
+	 * Meta Image field in *Projeto*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projeto.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Projeto document from Prismic
+ *
+ * - **API ID**: `projeto`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjetoDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<Simplify<ProjetoDocumentData>, "projeto", Lang>;
+
+export type AllDocumentTypes = HomeDocument | ProjetoDocument;
 
 /**
  * Primary content in *CallToAction → Default → Primary*
@@ -297,6 +357,79 @@ type HeroSliceVariation = HeroSliceDefault
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *Projetos → Default → Primary → fotos*
+ */
+export interface ProjetosSliceDefaultPrimaryFotosItem {
+	/**
+	 * Fotos field in *Projetos → Default → Primary → fotos*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projetos.default.primary.fotos[].fotos
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	fotos: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Projetos → Default → Primary*
+ */
+export interface ProjetosSliceDefaultPrimary {
+	/**
+	 * fotos field in *Projetos → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: projetos.default.primary.fotos[]
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	fotos: prismic.GroupField<Simplify<ProjetosSliceDefaultPrimaryFotosItem>>;
+	
+	/**
+	 * titulo_projeto field in *Projetos → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Digite aqui o titulo do projeto (Ex: Fotos - Ensaio casamento)
+	 * - **API ID Path**: projetos.default.primary.titulo_projeto
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	titulo_projeto: prismic.KeyTextField;
+	
+	/**
+	 * Descricao do projeto field in *Projetos → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Digite aqui a descrição do projeto
+	 * - **API ID Path**: projetos.default.primary.descricao_do_projeto
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	descricao_do_projeto: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Projetos Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ProjetosSliceDefault = prismic.SharedSliceVariation<"default", Simplify<ProjetosSliceDefaultPrimary>, never>;
+
+/**
+ * Slice variation for *Projetos*
+ */
+type ProjetosSliceVariation = ProjetosSliceDefault
+
+/**
+ * Projetos Shared Slice
+ *
+ * - **API ID**: `projetos`
+ * - **Description**: Projetos
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ProjetosSlice = prismic.SharedSlice<"projetos", ProjetosSliceVariation>;
+
+/**
  * Item in *QuemSomos → Default → Primary → estatisticas pessoais*
  */
 export interface QuemSomosSliceDefaultPrimaryEstatisticasPessoaisItem {
@@ -427,6 +560,9 @@ declare module "@prismicio/client" {
 			HomeDocument,
 			HomeDocumentData,
 			HomeDocumentDataSlicesSlice,
+			ProjetoDocument,
+			ProjetoDocumentData,
+			ProjetoDocumentDataSlicesSlice,
 			AllDocumentTypes,
 			CallToActionSlice,
 			CallToActionSliceDefaultPrimary,
@@ -441,6 +577,11 @@ declare module "@prismicio/client" {
 			HeroSliceDefaultPrimary,
 			HeroSliceVariation,
 			HeroSliceDefault,
+			ProjetosSlice,
+			ProjetosSliceDefaultPrimaryFotosItem,
+			ProjetosSliceDefaultPrimary,
+			ProjetosSliceVariation,
+			ProjetosSliceDefault,
 			QuemSomosSlice,
 			QuemSomosSliceDefaultPrimaryEstatisticasPessoaisItem,
 			QuemSomosSliceDefaultPrimary,

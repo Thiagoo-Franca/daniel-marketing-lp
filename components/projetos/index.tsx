@@ -4,23 +4,16 @@ import { useState } from "react";
 import { Reveal } from "../animations/Reveal";
 import Post from "./post";
 import ModalProjetos from "./modal";
+import { Content } from "@prismicio/client";
 
-const projeto = {
-  title: "Projeto Exemplo",
-  description: "Descrição do projeto exemplo.",
-  images: ["/assets/hero1.jpg", "/assets/hero2.jpg", "/assets/hero3.jpg"],
-};
-interface ProjetoData {
-  title: string;
-  description: string;
-  images: string[];
+interface ProjetosProps {
+  projetos: Content.ProjetoDocument[];
 }
 
-export default function Projetos() {
-  const [selectedProject, setSelectedProject] = useState<ProjetoData | null>(
-    null,
-  );
-
+export default function Projetos({ projetos }: ProjetosProps) {
+  const [selectedProject, setSelectedProject] =
+    useState<Content.ProjetoDocument | null>(null);
+  console.log("projetos", projetos);
   return (
     <section
       id="projetos"
@@ -45,16 +38,18 @@ export default function Projetos() {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4  w-full max-w-7xl mx-auto mt-8 md:mt-12 px-2 md:px-0">
         <Post
-          onClick={() => setSelectedProject(projeto)}
-          projeto_data={projeto}
+          onClick={() => setSelectedProject(projetos[0])}
+          //  projeto_data={projetos[0].data}
         />
       </div>
-      {selectedProject && (
-        <ModalProjetos
-          onClose={() => setSelectedProject(null)}
-          projeto_data={selectedProject}
-        />
-      )}
+      {
+        // selectedProject && (
+        // <ModalProjetos
+        // projeto_data={selectedProject}
+        // onClose={() => setSelectedProject(null)}
+        // />
+        // )
+      }
     </section>
   );
 }
