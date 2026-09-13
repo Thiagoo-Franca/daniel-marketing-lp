@@ -11,6 +11,8 @@ export type FooterProps = SliceComponentProps<Content.FooterSlice>;
  * Component for "Footer" Slices.
  */
 const Footer: FC<FooterProps> = ({ slice }) => {
+  console.log("slice", slice.primary);
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -23,21 +25,18 @@ const Footer: FC<FooterProps> = ({ slice }) => {
               <h5 className="text-md md:text-2xl font-bold text-white">
                 DANIEL <span className="text-secondary">MARKETING</span>
               </h5>
-              <p className="text-gray-400">
-                {slice.primary.frase ||
-                  "Conteúdo audiovisual que posiciona marcas e gera resultado real."}
-              </p>
+              <p className="text-gray-400">{slice.primary.frase}</p>
             </div>
             <div>
               <h5 className="text-sm md:text-md font-normal text-gray-400">
                 CONTATO
               </h5>
               <p className="text-gray-400">
-                WhatsApp: {slice.primary.whatsapp || "(73) 98827-7809"}
+                WhatsApp: {slice.primary.whatsapp}
               </p>
               <p className="text-gray-400">
                 E-mail:
-                {slice.primary.email || "francadaniel8257@gmail.com"}
+                {slice.primary.email}
               </p>
             </div>
             <div>
@@ -46,10 +45,7 @@ const Footer: FC<FooterProps> = ({ slice }) => {
               </h5>
               <PrismicLink
                 className="text-gray-400 hover:text-gray-300"
-                field={
-                  slice.primary.instagram ||
-                  "https://instagram.com/daniielmarketing"
-                }
+                field={slice.primary.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
               >
