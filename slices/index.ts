@@ -3,11 +3,13 @@
 import CallToAction from "./CallToAction";
 import Footer from "./Footer";
 import Hero from "./Hero";
+import Projetos from "./Projetos";
 import QuemSomos from "./QuemSomos";
 
 export const components = {
-  call_to_action: CallToAction,
-  footer: Footer,
-  hero: Hero,
-  quem_somos: QuemSomos,
+	call_to_action: CallToAction,
+	footer: Footer,
+	hero: Hero,
+	projetos: Projetos,
+	quem_somos: QuemSomos
 };
