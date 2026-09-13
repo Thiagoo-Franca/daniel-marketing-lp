@@ -14,8 +14,6 @@ export type QuemSomosProps = SliceComponentProps<Content.QuemSomosSlice>;
  */
 
 const QuemSomos: FC<QuemSomosProps> = ({ slice }) => {
-  console.log("slice", slice.primary);
-
   const DADOS = slice.primary.estatisticas_pessoais.map((item) => ({
     numeros: item.estatisticas_pessoais,
     descricao: item.estatisticas_pessoais_descricao,

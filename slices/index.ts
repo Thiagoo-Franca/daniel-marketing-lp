@@ -6,8 +6,8 @@ import Hero from "./Hero";
 import QuemSomos from "./QuemSomos";
 
 export const components = {
-	call_to_action: CallToAction,
-	footer: Footer,
-	hero: Hero,
-	quem_somos: QuemSomos
+  call_to_action: CallToAction,
+  footer: Footer,
+  hero: Hero,
+  quem_somos: QuemSomos,
 };

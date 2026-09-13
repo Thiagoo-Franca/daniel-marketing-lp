@@ -11,8 +11,6 @@ export type FooterProps = SliceComponentProps<Content.FooterSlice>;
  * Component for "Footer" Slices.
  */
 const Footer: FC<FooterProps> = ({ slice }) => {
-  console.log("slice", slice.primary);
-
   return (
     <section
       data-slice-type={slice.slice_type}
