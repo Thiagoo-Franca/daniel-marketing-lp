@@ -1,4 +1,3 @@
-import CallToAction from "@/components/callToAction";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Projetos from "@/components/projetos";
@@ -11,6 +10,13 @@ import { SliceZone } from "@prismicio/react";
 export default async function Home() {
   const client = createClient();
   const home = await client.getSingle("home");
+
+  console.log(
+    home.data.slices.map((slice) => ({
+      type: slice.slice_type,
+      variation: slice.variation,
+    })),
+  );
   return (
     <>
       <Header />
@@ -18,8 +24,6 @@ export default async function Home() {
       <Servicos />
       <QuemSomos />
       <Projetos />
-      <CallToAction />
-
       <SliceZone slices={home.data.slices} components={components} />
     </>
   );

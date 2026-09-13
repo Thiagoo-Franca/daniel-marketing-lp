@@ -46,7 +46,7 @@ type ContentRelationshipFieldWithData<
 		>
 }[Exclude<TCustomType[number], string>["id"]];
 
-type HomeDocumentDataSlicesSlice = FooterSlice
+type HomeDocumentDataSlicesSlice = FooterSlice | CallToActionSlice
 
 /**
  * Content for Home documents
@@ -76,6 +76,74 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 export type AllDocumentTypes = HomeDocument;
+
+/**
+ * Primary content in *CallToAction → Default → Primary*
+ */
+export interface CallToActionSliceDefaultPrimary {
+	/**
+	 * background-image field in *CallToAction → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: call_to_action.default.primary.background_image
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	background_image: prismic.ImageField<never>;
+	
+	/**
+	 * frase chamada field in *CallToAction → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Frase para chamar lead (Apenas texto em branco)
+	 * - **API ID Path**: call_to_action.default.primary.frase_chamada
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	frase_chamada: prismic.KeyTextField;
+	
+	/**
+	 * red-text field in *CallToAction → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Digite aqui palavra/frase em destaque em vermelho
+	 * - **API ID Path**: call_to_action.default.primary.red_text
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	red_text: prismic.KeyTextField;
+	
+	/**
+	 * paragraph field in *CallToAction → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Digite aqui texto mais descritivo de chamada
+	 * - **API ID Path**: call_to_action.default.primary.paragraph
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	paragraph: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for CallToAction Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CallToActionSliceDefault = prismic.SharedSliceVariation<"default", Simplify<CallToActionSliceDefaultPrimary>, never>;
+
+/**
+ * Slice variation for *CallToAction*
+ */
+type CallToActionSliceVariation = CallToActionSliceDefault
+
+/**
+ * CallToAction Shared Slice
+ *
+ * - **API ID**: `call_to_action`
+ * - **Description**: CallToAction
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CallToActionSlice = prismic.SharedSlice<"call_to_action", CallToActionSliceVariation>;
 
 /**
  * Primary content in *Footer → Default → Primary*
@@ -164,6 +232,10 @@ declare module "@prismicio/client" {
 			HomeDocumentData,
 			HomeDocumentDataSlicesSlice,
 			AllDocumentTypes,
+			CallToActionSlice,
+			CallToActionSliceDefaultPrimary,
+			CallToActionSliceVariation,
+			CallToActionSliceDefault,
 			FooterSlice,
 			FooterSliceDefaultPrimary,
 			FooterSliceVariation,
