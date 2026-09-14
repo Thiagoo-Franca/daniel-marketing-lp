@@ -8,8 +8,8 @@ interface MenuHamburguerProps {
 
 const links = [
   { href: "servicos", label: "Serviços" },
-  { href: "sobre-mim", label: "Sobre mim" },
   { href: "projetos", label: "Projetos" },
+  { href: "sobre-mim", label: "Sobre mim" },
   { href: "call-to-action", label: "Contato" },
 ];
 
