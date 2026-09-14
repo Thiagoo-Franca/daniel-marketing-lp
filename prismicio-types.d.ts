@@ -137,6 +137,17 @@ interface ProjetoDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
 	 */
 	foto: prismic.GroupField<Simplify<ProjetoDocumentDataFotoItem>>;
+	
+	/**
+	 * video cloudinary field in *projeto*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Digite aqui a URL do video no cloudinary
+	 * - **API ID Path**: projeto.video_cloudinary
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	video_cloudinary: prismic.KeyTextField;
 }
 
 /**

@@ -19,6 +19,7 @@ export default function ModalProjetos({
   onClose,
   projeto_data,
 }: ModalProjetosProps) {
+  console.log("projeto_data", projeto_data);
   return (
     <section className="fixed inset-0 z-50 flex items-center justify-center">
       {
@@ -28,40 +29,51 @@ export default function ModalProjetos({
         className="fixed inset-0  flex items-center justify-center bg-black/70 backdrop-blur-sm"
         onClick={onClose}
       ></div>
-      <div className="relative w-11/12 rounded-lg bg-primary w-8/10 md:max-w-5xl rounded-lg">
-        <Swiper
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000 }}
-          loop
-          modules={[Navigation, Pagination, Autoplay]}
-          className="mySwiper aspect-[3/4] md:aspect-[9/16] w-full md:max-h-[70vh]"
-          style={
-            {
-              "--swiper-navigation-color": "var(--secondary)",
-              "--swiper-pagination-color": "var(--secondary)",
-            } as React.CSSProperties
-          }
-        >
-          {projeto_data.data.foto?.map(
-            (foto, index) =>
-              isFilled.image(foto.foto) && (
-                <SwiperSlide key={index}>
-                  <Image
-                    src={foto.foto.url}
-                    alt={
-                      foto.foto.alt ??
-                      `Imagem ${index + 1} de ${projeto_data.data.titulo}`
-                    }
-                    fill
-                    className="object-cover"
-                  />
-                </SwiperSlide>
-              ),
-          )}
-        </Swiper>
 
+      <div className="relative w-11/12 rounded-lg bg-primary md:max-w-5xl rounded-lg">
+        {
+          // Conteúdo do modal, pode ser video ou fotos
+          projeto_data.data.video_cloudinary ? (
+            <video
+              src={projeto_data.data.video_cloudinary}
+              controls
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <Swiper
+              slidesPerView={1}
+              navigation
+              pagination={{ clickable: true }}
+              autoplay={{ delay: 3000 }}
+              loop
+              modules={[Navigation, Pagination, Autoplay]}
+              className="mySwiper aspect-[3/4] md:aspect-[9/16] w-full md:max-h-[70vh]"
+              style={
+                {
+                  "--swiper-navigation-color": "var(--secondary)",
+                  "--swiper-pagination-color": "var(--secondary)",
+                } as React.CSSProperties
+              }
+            >
+              {projeto_data.data.foto?.map(
+                (foto, index) =>
+                  isFilled.image(foto.foto) && (
+                    <SwiperSlide key={index}>
+                      <Image
+                        src={foto.foto.url}
+                        alt={
+                          foto.foto.alt ??
+                          `Imagem ${index + 1} de ${projeto_data.data.titulo}`
+                        }
+                        fill
+                        className="object-cover"
+                      />
+                    </SwiperSlide>
+                  ),
+              )}
+            </Swiper>
+          )
+        }
         <button
           type="button"
           aria-label="Fechar modal"
@@ -77,7 +89,7 @@ export default function ModalProjetos({
             {projeto_data.data.titulo}
           </h2>
 
-          <p className="text-gray-300 text-sm md:text-base">
+          <p className="text-gray-300 text-sm text-justify md:text-base">
             {projeto_data.data.descricao}
           </p>
         </div>

@@ -47,6 +47,13 @@
           "repeat": true
         },
         "type": "Group"
+      },
+      "video_cloudinary": {
+        "config": {
+          "label": "video cloudinary",
+          "placeholder": "Digite aqui a URL do video no cloudinary"
+        },
+        "type": "Text"
       }
     }
   },
