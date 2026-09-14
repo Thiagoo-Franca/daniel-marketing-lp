@@ -67,6 +67,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
               <div className="flex flex-col md:flex-row gap-4 mt-8 ">
                 <ButtonWhatsApp className="border-none w-full md:max-w-sm hover:scale-102 transition-transform duration-300" />
                 <Button
+                  aria-label="visualizar projetos"
                   onClick={() => nav("projetos")}
                   className="border-none w-full md:max-w-sm h-12 md:h-16 bg-black/50 hover:bg-black/90 text-white rounded-none text-lg font-semibold hover:cursor-pointer hover:scale-102 transition-transform duration-300 flex items-center justify-center gap-2"
                 >
