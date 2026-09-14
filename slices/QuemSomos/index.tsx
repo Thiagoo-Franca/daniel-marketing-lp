@@ -26,7 +26,7 @@ const QuemSomos: FC<QuemSomosProps> = ({ slice }) => {
     >
       <section
         className="w-full py-8 px-2 md:px-0 md:py-12 bg-black"
-        id="quem-somos"
+        id="sobre-mim"
       >
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 w-full max-w-7xl mx-auto justify-between px-2 text-gray-400">
           <Reveal>

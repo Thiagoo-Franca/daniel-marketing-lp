@@ -87,7 +87,7 @@ export default function Servicos() {
   return (
     <section
       id="servicos"
-      className="bg-black flex flex-col py-8 md:py-12 px-2 md:px-0 "
+      className="bg-black flex flex-col py-8 md:py-12 px-2"
     >
       <div className="flex flex-col gap-4  w-full max-w-7xl mx-auto justify-between px-2 md:px-0 text-gray-400">
         <Reveal>

@@ -31,9 +31,6 @@ export default function Projetos({ projetos }: ProjetosProps) {
               <h1 className="text-3xl md:text-6xl font-bold text-white text-left  max-w-sm">
                 Projetos
               </h1>
-              <p className="text-gray-400">
-                Confira alguns dos nossos trabalhos mais recentes.
-              </p>
             </div>
           </Reveal>
           <h1>
@@ -47,7 +44,7 @@ export default function Projetos({ projetos }: ProjetosProps) {
   return (
     <section
       id="projetos"
-      className="bg-black flex flex-col py-8 md:py-12 px-2 md:px-0 "
+      className="bg-black flex flex-col py-8 md:py-12 px-2 "
     >
       <div className="max-w-7xl mx-auto w-full">
         <Reveal>
@@ -60,14 +57,14 @@ export default function Projetos({ projetos }: ProjetosProps) {
             <h1 className="text-3xl md:text-6xl font-bold text-white text-left  max-w-sm">
               Projetos
             </h1>
-            <p className="text-gray-400">
+            <p className="text-gray-400  text-justify hidden md:block">
               Confira alguns dos nossos trabalhos mais recentes.
             </p>
           </div>
         </Reveal>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4  w-full max-w-7xl mx-auto mt-8 md:mt-12 px-2 md:px-0">
+      <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4 w-full md:w-9/10  max-w-7xl mx-auto mt-8 md:mt-12 px-2 md:px-0">
         {projetos.map((projeto) => (
           <Post
             key={projeto.id}
