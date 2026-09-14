@@ -44,12 +44,12 @@ export default function Projetos({ projetos }: ProjetosProps) {
   return (
     <section
       id="projetos"
-      className="bg-black flex flex-col py-8 md:py-12 px-2 "
+      className="bg-black flex flex-col py-8 md:py-12 px-2 border-b border-gray-800 md:px-0 "
     >
       <div className="max-w-7xl mx-auto w-full">
         <Reveal>
           <h5 className="text-lg md:text-xl font-semibold text-left  text-gray-400">
-            Portfólio
+            00:02 - Portfólio
           </h5>
         </Reveal>
         <Reveal delay={0.15}>

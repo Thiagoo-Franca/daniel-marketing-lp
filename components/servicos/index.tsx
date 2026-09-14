@@ -92,7 +92,7 @@ export default function Servicos() {
       <div className="flex flex-col gap-4  w-full max-w-7xl mx-auto justify-between px-2 md:px-0 text-gray-400">
         <Reveal>
           <h5 className="text-lg md:text-xl font-semibold text-left ">
-            O que eu faço
+            00:01 - O que eu faço
           </h5>
         </Reveal>
         <Reveal delay={0.1}>

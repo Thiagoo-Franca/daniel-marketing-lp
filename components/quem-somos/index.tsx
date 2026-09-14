@@ -40,7 +40,7 @@ export default function QuemSomos() {
         <div className="flex flex-col gap-4 md:gap-8">
           <Reveal>
             <h5 className="text-lg md:text-xl font-semibold text-left ">
-              Quem sou eu
+              00:03 - Quem sou eu
             </h5>
           </Reveal>
           <Reveal delay={0.15}>

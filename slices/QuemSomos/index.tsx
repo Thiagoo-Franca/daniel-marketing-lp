@@ -31,7 +31,7 @@ const QuemSomos: FC<QuemSomosProps> = ({ slice }) => {
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 w-full max-w-7xl mx-auto justify-between px-2 text-gray-400">
           <Reveal>
             <h5 className="text-lg md:text-xl font-semibold text-left md:hidden ">
-              Quem sou eu
+              00:03 - Quem sou eu
             </h5>
           </Reveal>
 
@@ -40,7 +40,7 @@ const QuemSomos: FC<QuemSomosProps> = ({ slice }) => {
               {isFilled.image(slice.primary.foto_sua_3_4) && (
                 <Image
                   src={slice.primary.foto_sua_3_4.url}
-                  alt="Daniel França photo"
+                  alt="Foto do Daniel França - Especialista em Marketing Digital e Produção de Conteúdo Audiovisual"
                   fill
                   className="object-cover"
                 />
@@ -50,7 +50,7 @@ const QuemSomos: FC<QuemSomosProps> = ({ slice }) => {
           <div className="flex flex-col gap-4 md:gap-8 w-full">
             <Reveal>
               <h5 className="text-lg md:text-xl font-semibold text-left md:block hidden">
-                Quem sou eu
+                00:03 - Quem sou eu
               </h5>
             </Reveal>
             <Reveal delay={0.15}>
@@ -74,7 +74,7 @@ const QuemSomos: FC<QuemSomosProps> = ({ slice }) => {
           {DADOS.map((item, index) => (
             <Reveal key={index} delay={0.45 + index * 0.15}>
               <div className="flex flex-col items-start pl-4 justify-center border-l-2 border-secondary">
-                <span className="text-3xl md:text-5xl font-bold text-white">
+                <span className="font-mono text-3xl md:text-5xl font-bold text-white">
                   {item.numeros}
                 </span>
                 <span className="text-lg md:text-xl font-semibold text-gray-400">

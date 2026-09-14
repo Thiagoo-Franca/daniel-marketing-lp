@@ -9,12 +9,16 @@ interface PostProps {
 export default function Post({ onClick, projeto_data }: PostProps) {
   return (
     <div
-      className="group relative w-full bg-cover bg-center bg-no-repeat rounded-lg aspect-[16/9] cursor-pointer hover:scale-102 transition-transform duration-300"
-      style={{
-        backgroundImage: `url('${projeto_data?.data.capa.url}')`,
-      }}
+      className="group relative w-full overflow-hidden rounded-sm aspect-[16/9] cursor-pointer"
       onClick={onClick}
     >
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 ease-out group-hover:scale-105"
+        style={{
+          backgroundImage: `url('${projeto_data?.data.capa.url}')`,
+        }}
+      />
+
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-300 rounded-lg" />
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent rounded-lg md:hidden" />
