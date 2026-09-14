@@ -34,12 +34,11 @@ export const metadata: Metadata = {
   title: "Daniel Marketing",
   description:
     "Daniel Marketing is a digital marketing agency that helps businesses grow online. We specialize in SEO, PPC, social media marketing, and web design.",
-  verification: {
-    google: "googlee8e25870325311d7",
+  openGraph: {
+    title: "Daniel Marketing",
+    description:
+      "Daniel Marketing is a digital marketing agency that helps businesses grow online. We specialize in SEO, PPC, social media marketing, and web design.",
   },
-  creator: "Thiago França",
-  abstract:
-    "Daniel Marketing is a digital marketing agency that helps businesses grow online. We specialize in SEO, PPC, social media marketing, and web design.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -56,6 +55,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         dmSansHeading.variable,
       )}
     >
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="google-site-verification"
+          content="vb8Jbip_Fp7_A4L84Jx3Evjo6XAG4IQqRLORy4mJoqU"
+        />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      </head>
       <body className="min-h-full flex flex-col">
         <main className="flex-grow">{children}</main>
       </body>
