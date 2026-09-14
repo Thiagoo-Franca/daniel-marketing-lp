@@ -35,8 +35,11 @@ export const metadata: Metadata = {
   description:
     "Daniel Marketing is a digital marketing agency that helps businesses grow online. We specialize in SEO, PPC, social media marketing, and web design.",
   verification: {
-    google: "google-site-verification: googlee8e25870325311d7.html",
+    google: "googlee8e25870325311d7",
   },
+  creator: "Thiago França",
+  abstract:
+    "Daniel Marketing is a digital marketing agency that helps businesses grow online. We specialize in SEO, PPC, social media marketing, and web design.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
