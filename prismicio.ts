@@ -18,13 +18,17 @@ export const repositoryName =
  * @param config - Configuration for the Prismic client.
  */
 export const createClient = (config: ClientConfig = {}) => {
-  console.log("ROTAS PRISMIC:", prismicConfig.routes);
   const client = baseCreateClient(repositoryName, {
     routes: prismicConfig.routes,
     fetchOptions:
       process.env.NODE_ENV === "production"
-        ? { next: { tags: ["prismic"] }, cache: "force-cache" }
-        : { next: { revalidate: 5 } },
+        ? {
+            next: { tags: ["prismic"] },
+            cache: "force-cache",
+          }
+        : {
+            next: { revalidate: 5 },
+          },
     ...config,
   });
 
