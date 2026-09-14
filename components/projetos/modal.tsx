@@ -28,7 +28,7 @@ export default function ModalProjetos({
         className="fixed inset-0  flex items-center justify-center bg-black/70 backdrop-blur-sm"
         onClick={onClose}
       ></div>
-      <div className="relative w-11/12 rounded-lg bg-primary md:w-3/4 rounded-lg">
+      <div className="relative w-11/12 rounded-lg bg-primary w-8/10 md:max-w-5xl rounded-lg">
         <Swiper
           slidesPerView={1}
           navigation
@@ -36,7 +36,7 @@ export default function ModalProjetos({
           autoplay={{ delay: 3000 }}
           loop
           modules={[Navigation, Pagination, Autoplay]}
-          className="mySwiper h-[400px] w-full "
+          className="mySwiper aspect-[3/4] md:aspect-[9/16] w-full md:max-h-[70vh]"
           style={
             {
               "--swiper-navigation-color": "var(--secondary)",
