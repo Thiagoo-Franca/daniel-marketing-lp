@@ -1,26 +1,18 @@
-import { useNav } from "@/hooks/useNav";
 import { motion } from "motion/react";
 
 interface MenuHamburguerProps {
   open: boolean;
   setOpen: (open: boolean) => void;
+  links: { href: string; label: string }[];
+  handleNavigation: (sectionId: string) => void;
 }
 
-const links = [
-  { href: "servicos", label: "Serviços" },
-  { href: "projetos", label: "Projetos" },
-  { href: "sobre-mim", label: "Sobre mim" },
-  { href: "call-to-action", label: "Contato" },
-];
-
-export default function MenuHamburguer({ open, setOpen }: MenuHamburguerProps) {
-  const nav = useNav();
-
-  const handleNavigation = (sectionId: string) => {
-    nav(sectionId);
-    setOpen(false);
-  };
-
+export default function MenuHamburguer({
+  open,
+  setOpen,
+  links,
+  handleNavigation,
+}: MenuHamburguerProps) {
   return (
     <>
       {open && (

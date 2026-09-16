@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { Reveal } from "../animations/Reveal";
-import Post from "./post";
 import ModalProjetos from "./modal";
 import { Content } from "@prismicio/client";
+import ProjetosGrid from "./projetos-grid";
 
 interface ProjetosProps {
   projetos: Content.ProjetoDocument[];
@@ -14,33 +14,6 @@ export default function Projetos({ projetos }: ProjetosProps) {
   const [selectedProject, setSelectedProject] =
     useState<Content.ProjetoDocument | null>(null);
 
-  if (!projetos || projetos.length === 0) {
-    return (
-      <section
-        id="projetos"
-        className="bg-black flex flex-col py-8 md:py-12 px-2 md:px-0 "
-      >
-        <div className="max-w-7xl mx-auto w-full">
-          <Reveal>
-            <h5 className="text-lg md:text-xl font-semibold text-left  text-gray-400">
-              Portfólio
-            </h5>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <div className="flex flex-row items-center w-full gap-4 md:gap-8 justify-between">
-              <h1 className="text-3xl md:text-6xl font-bold text-white text-left  max-w-sm">
-                Projetos
-              </h1>
-            </div>
-          </Reveal>
-          <h1>
-            Nenhum projeto encontrado. Por favor, verifique novamente mais
-            tarde.
-          </h1>
-        </div>
-      </section>
-    );
-  }
   return (
     <section
       id="projetos"
@@ -54,9 +27,9 @@ export default function Projetos({ projetos }: ProjetosProps) {
         </Reveal>
         <Reveal delay={0.15}>
           <div className="flex flex-row items-center w-full gap-4 md:gap-8 justify-between">
-            <h1 className="text-3xl md:text-6xl font-bold text-white text-left  max-w-sm">
+            <h2 className="text-3xl md:text-6xl font-bold text-white text-left  max-w-sm">
               Projetos
-            </h1>
+            </h2>
             <p className="text-gray-400  text-justify hidden md:block">
               Confira alguns dos nossos trabalhos mais recentes.
             </p>
@@ -64,17 +37,10 @@ export default function Projetos({ projetos }: ProjetosProps) {
         </Reveal>
       </div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4 w-full md:w-9/10  max-w-7xl mx-auto mt-8 md:mt-12 px-2 md:px-0">
-        {projetos.map((projeto) => (
-          <Reveal key={projeto.id} delay={0.15}>
-            <Post
-              key={projeto.id}
-              projeto_data={projeto}
-              onClick={() => setSelectedProject(projeto)}
-            />
-          </Reveal>
-        ))}
-      </div>
+      <ProjetosGrid
+        projetos={projetos}
+        setSelectedProject={setSelectedProject}
+      />
       {selectedProject && (
         <ModalProjetos
           onClose={() => setSelectedProject(null)}
