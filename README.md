@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Daniel Marketing | Especialista em Marketing Digital
 
-## Getting Started
+Daniel Marketing é especialista em marketing digital, com foco em estratégias de crescimento para empresas e empreendedores. Com uma abordagem personalizada, ele ajuda seus clientes a alcançar seus objetivos de negócios através de campanhas eficazes e inovadoras. Detalhes sobre os serviços oferecidos, portfólio de projetos anteriores e informações de contato podem ser encontrados neste site.
 
-First, run the development server:
+## Detalhes do Projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Nome do Projeto:** Daniel Marketing LP
+- **Descrição:** Site de apresentação do Daniel Marketing, com informações sobre os serviços, portfólio e contato.
+- **Tecnologias Utilizadas:** Next.js, React, Tailwind CSS, Prismic, Framer Motion, Swiper.js, TypeScript, Vercel.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estrutura do Projeto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Páginas Principais:**
+  - `index.tsx`: Página inicial com informações sobre os serviços e portfólio.
+  - `servicos.tsx`: Página detalhando os serviços oferecidos.
+  - `projetos.tsx`: Página mostrando projetos anteriores com modal de visualização.
+  - `contato.tsx`: Página com formulário de contato.
+- **Componentes:**
+  - `header`: Componente de cabeçalho com menu hamburguer.
+  - `footer`: Componente de rodapé.
+  - `projetos/modal.tsx`: Componente modal para visualização de projetos.
+- **Hooks:**
+  - `useNav`: Hook para navegação entre seções da página.
+  - `useScroll`: Hook para detectar o scroll da página e alterar o estilo do cabeçalho.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Arquitetura do Projeto
 
-## Learn More
+- O projeto segue a arquitetura de componentes do React, com separação clara entre páginas e componentes reutilizáveis. A estilização é feita utilizando Tailwind CSS, permitindo uma abordagem responsiva e moderna. A navegação entre seções é facilitada pelo hook `useNav`, enquanto o hook `useScroll` melhora a experiência do usuário ao alterar o estilo do cabeçalho com base na rolagem da página.
 
-To learn more about Next.js, take a look at the following resources:
+## Como Executar o Projeto Localmente
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone o repositório:
+   ```bash
+   git clone <URL_DO_REPOSITORIO>
+   ```
+2. Instale as dependências:
+   ```bash
+   cd <NOME_DO_PROJETO>
+   npm install
+   ```
+3. Execute o projeto:
+   ```bash
+   npm run dev
+   ```
