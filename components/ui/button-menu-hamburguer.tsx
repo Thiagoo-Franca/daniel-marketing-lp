@@ -10,7 +10,7 @@ export default function ButtonMenuHamburguer({
   return (
     <button
       onClick={() => setOpen(!open)}
-      className={`md:hidden relative w-8 h-8 flex flex-col justify-center gap-1.5 group hover:cursor-pointer `}
+      className={`md:hidden relative w-8 h-8 flex flex-col justify-self-end gap-1.5 group hover:cursor-pointer `}
       aria-label="Menu"
     >
       <span

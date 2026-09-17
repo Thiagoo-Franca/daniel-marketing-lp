@@ -89,7 +89,7 @@ export const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => {
 export const ArrowIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      className="w-3 h-3 text-white"
+      className="w-3 h-3 text-foreground"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

@@ -33,17 +33,12 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 ${getBackgroundColor(isScrolled, open)}   transition-colors duration-300`}
     >
-      <div className="flex items-center justify-between w-full max-w-7xl px-2 py-6 mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 items-center w-full max-w-7xl px-2 py-6 mx-auto">
         <Logo handleNavigation={handleNavigation} />
 
         <NavList handleNavigation={handleNavigation} links={LINKS} />
 
         <ButtonMenuHamburguer open={open} setOpen={setOpen} />
-
-        {
-          // div to maintain spacing between the logo and the menu button when the nav list is hidden on mobile
-        }
-        <div className="hidden md:block" />
       </div>
 
       <AnimatePresence>

@@ -59,17 +59,17 @@ const Hero: FC<HeroProps> = ({ slice }) => {
               <h5 className="text-gray-300 text-lg md:text-xl mb-2 md:mb-4">
                 {slice.primary.listagem}
               </h5>
-              <h1 className="text-white text-5xl md:text-6xl font-bold leading-tight md:leading-tight max-w-3xl">
+              <h1 className="text-foreground text-5xl md:text-6xl font-bold leading-tight md:leading-tight max-w-3xl">
                 {slice.primary.white_text}{" "}
                 <span className="text-secondary">{slice.primary.red_text}</span>
               </h1>
 
               <div className="flex flex-col md:flex-row gap-4 mt-8 ">
-                <ButtonWhatsApp className="border-none w-full md:max-w-sm hover:scale-102 transition-transform duration-300" />
+                <ButtonWhatsApp className="border-none w-full md:max-w-sm hover:scale-[1.02] transition-transform duration-300" />
                 <Button
                   aria-label="visualizar projetos"
                   onClick={() => nav("projetos")}
-                  className="border-none w-full md:max-w-sm h-12 md:h-16 bg-black/50 hover:bg-black/90 text-white rounded-none text-lg font-semibold hover:cursor-pointer hover:scale-102 transition-transform duration-300 flex items-center justify-center gap-2"
+                  className="border-none w-full md:max-w-sm h-12 md:h-16 bg-black/50 hover:bg-black/90 text-foreground rounded-none text-lg font-semibold hover:cursor-pointer hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2"
                 >
                   Veja nosso portfólio
                   <ArrowIcon />

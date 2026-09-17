@@ -20,29 +20,29 @@ const Footer: FC<FooterProps> = ({ slice }) => {
         <div className="flex flex-col  gap-4 w-full max-w-7xl mx-auto justify-between px-2">
           <section className="flex flex-col md:flex-row  gap-4 w-full max-w-7xl mx-auto justify-between px-2">
             <div>
-              <h5 className="text-md md:text-2xl font-bold text-white">
+              <h5 className="text-md md:text-2xl font-bold text-foreground">
                 DANIEL <span className="text-secondary">MARKETING</span>
               </h5>
-              <p className="text-gray-400">{slice.primary.frase}</p>
+              <p className="text-muted-foreground">{slice.primary.frase}</p>
             </div>
             <div>
-              <h5 className="text-sm md:text-md font-normal text-gray-400">
+              <h5 className="text-sm md:text-md font-normal text-muted-foreground">
                 CONTATO
               </h5>
-              <p className="text-gray-400">
+              <p className="text-muted-foreground">
                 WhatsApp: {slice.primary.whatsapp}
               </p>
-              <p className="text-gray-400">
+              <p className="text-muted-foreground">
                 E-mail:
                 {slice.primary.email}
               </p>
             </div>
             <div>
-              <h5 className="text-sm md:text-md font-normal text-gray-400">
+              <h5 className="text-sm md:text-md font-normal text-muted-foreground">
                 REDES SOCIAIS
               </h5>
               <PrismicLink
-                className="text-gray-400 hover:text-gray-300"
+                className="text-muted-foreground hover:text-muted-foreground/80"
                 field={slice.primary.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -51,7 +51,7 @@ const Footer: FC<FooterProps> = ({ slice }) => {
               </PrismicLink>
             </div>
           </section>
-          <section className="flex flex-col md:flex-row w-full max-w-7xl mx-auto justify-between px-2 text-center text-gray-500 text-sm gap-2 mt-4">
+          <section className="flex flex-col md:flex-row w-full max-w-7xl mx-auto justify-between px-2 text-center text-muted-foreground/60 text-sm gap-2 mt-4">
             <p>
               &copy; {new Date().getFullYear()} Daniel Marketing. Todos os
               direitos reservados.

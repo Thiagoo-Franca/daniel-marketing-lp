@@ -30,18 +30,18 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
         <Reveal>
           <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-center gap-4 px-2 text-center">
             <Reveal delay={0.15}>
-              <h2 className="mb-2 md:mb-4 max-w-xl text-5xl font-bold text-white leading-tight md:text-7xl">
+              <h2 className="mb-2 md:mb-4 max-w-xl text-5xl font-bold text-foreground leading-tight md:text-7xl">
                 {slice.primary.frase_chamada}{" "}
                 <span className="text-secondary">{slice.primary.red_text}</span>
               </h2>
             </Reveal>
             <Reveal delay={0.3}>
-              <p className="w-full text-gray-400 mb-8 max-w-md md:max-w-2xl">
+              <p className="w-full text-md md:text-lg text-muted-foreground mb-8 max-w-md md:max-w-2xl">
                 {slice.primary.paragraph}
               </p>
             </Reveal>
             <Reveal delay={0.45}>
-              <ButtonWhatsApp className="px-12" />
+              <ButtonWhatsApp className="px-12 hover:scale-[1.02]" />
             </Reveal>
           </div>
         </Reveal>
