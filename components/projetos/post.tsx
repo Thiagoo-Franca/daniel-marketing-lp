@@ -3,13 +3,13 @@ import { ArrowIcon } from "../ui/icons";
 
 interface PostProps {
   onClick?: () => void;
-  projeto_data?: Content.ProjetoDocument; // ajustar depois
+  projeto_data?: Content.ProjetoDocument;
 }
 
 export default function Post({ onClick, projeto_data }: PostProps) {
   return (
     <div
-      className="group relative w-full overflow-hidden rounded-sm aspect-[16/9] cursor-pointer"
+      className="group relative w-full aria-label='Ver detalhes' overflow-hidden rounded-sm aspect-[16/9] cursor-pointer hover:shadow-sm transition-shadow  shadow-secondary duration-300"
       onClick={onClick}
     >
       <div
@@ -30,7 +30,7 @@ export default function Post({ onClick, projeto_data }: PostProps) {
         <h2 className="text-xl font-bold text-secondary">
           {projeto_data?.data.titulo}
         </h2>
-        <p className="text-gray-400 text-sm text-white  hidden md:block">
+        <p className="text-foreground text-sm hidden md:block">
           {projeto_data?.data.descricao}
         </p>
       </div>

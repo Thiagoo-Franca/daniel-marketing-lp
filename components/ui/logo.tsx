@@ -4,7 +4,7 @@ interface LogoProps {
 export default function Logo({ handleNavigation }: LogoProps) {
   return (
     <div
-      className="text-md md:text-2xl font-bold text-white hover:cursor-pointer"
+      className="self-start text-md md:text-2xl font-bold text-foreground hover:cursor-pointer"
       onClick={() => (handleNavigation ? handleNavigation("hero") : null)}
     >
       DANIEL <span className="text-secondary">MARKETING</span>

@@ -13,17 +13,21 @@ export default function ProjetosGrid({
 }: ProjetoGridProps) {
   if (!projetos || projetos.length === 0) {
     return (
-      <p className="text-gray-400 text-center mt-8 md:mt-12">
+      <p className="text-muted-foreground text-center mt-8 md:mt-12">
         Nenhum projeto encontrado. Por favor, verifique novamente mais tarde.
       </p>
     );
   }
 
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4 w-full md:w-9/10  max-w-7xl mx-auto mt-8 md:mt-12 px-2 md:px-0">
+    <div className="grid  md:grid-cols-2  gap-6 md:gap-8 w-full   max-w-7xl mx-auto mt-8 md:mt-12 px-2 md:px-0">
       {projetos.map((projeto) => (
-        <Reveal key={projeto.id} delay={0.15}>
+        <Reveal
+          key={projeto.id}
+          delay={0.15 + projetos.indexOf(projeto) * 0.15}
+        >
           <Post
+            aria-label="Ver detalhes"
             key={projeto.id}
             projeto_data={projeto}
             onClick={() => setSelectedProject(projeto)}

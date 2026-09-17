@@ -29,9 +29,10 @@ export default function ModalProjetos({
     };
 
     document.addEventListener("keydown", handleEsc);
-
+    document.body.style.overflow = "hidden";
     return () => {
       document.removeEventListener("keydown", handleEsc);
+      document.body.style.overflow = " auto";
     };
   }, [onClose]);
 
@@ -42,7 +43,7 @@ export default function ModalProjetos({
         onClick={onClose}
       ></div>
 
-      <div className="relative w-11/12 rounded-lg bg-primary md:max-w-5xl rounded-lg">
+      <div className="relative w-full bg-primary md:max-w-5xl rounded-lg">
         {projeto_data.data.video_cloudinary ? (
           <video
             src={projeto_data.data.video_cloudinary}
@@ -60,7 +61,7 @@ export default function ModalProjetos({
             autoplay={{ delay: 3000 }}
             loop
             modules={[Navigation, Pagination, Autoplay]}
-            className="mySwiper aspect-[3/4] md:aspect-[9/16] w-full md:max-h-[70vh]"
+            className="mySwiper aspect-[3/4] md:aspect-[9/16] w-full md:max-h-[70vh] relative w-full h-full"
             style={
               {
                 "--swiper-navigation-color": "var(--secondary)",
@@ -89,7 +90,8 @@ export default function ModalProjetos({
         <button
           type="button"
           aria-label="Fechar modal"
-          className="group absolute right-4 top-4 z-50 h-8 w-8 hover:cursor-pointer"
+          aria-expanded="false"
+          className="group absolute right-4 top-4 z-50 h-8 w-8 cursor-pointer bg-black/50 rounded-full"
           onClick={onClose}
         >
           <span className="absolute left-1/2 top-1/2 h-px w-6 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-white transition-colors duration-300 group-hover:bg-secondary" />
@@ -97,11 +99,11 @@ export default function ModalProjetos({
           <span className="absolute left-1/2 top-1/2 h-px w-6 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-white transition-colors duration-300 group-hover:bg-secondary" />
         </button>
         <div className="px-4 py-6">
-          <h2 className="mb-4 text-2xl font-bold text-white md:text-4xl">
+          <h2 className="mb-4 text-2xl font-bold text-foreground md:text-4xl">
             {projeto_data.data.titulo}
           </h2>
 
-          <p className="text-gray-300 text-sm text-justify md:text-base">
+          <p className="text-foreground text-sm text-left">
             {projeto_data.data.descricao}
           </p>
         </div>
